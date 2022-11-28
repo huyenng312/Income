@@ -297,30 +297,30 @@
           return { path: path, projection: projection };
         },
 
-        // done: function (datamap) {
-        //   datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
+        done: function (datamap) {
+          datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
 
-        //   var width = window.innerWidth,
-        //     height = window.innerHeight;
+          var width = window.innerWidth,
+            height = window.innerHeight;
 
-        //   datamap.svg
-        //     .selectAll("g")
-        //     .attr("width", width)
-        //     .attr("height", height);
+          datamap.svg
+            .selectAll("g")
+            .attr("width", width)
+            .attr("height", height);
 
-        //   function redraw() {
-        //     datamap.svg
-        //       .selectAll("g")
-        //       .attr(
-        //         "transform",
-        //         "translate(" +
-        //           d3.event.translate +
-        //           ")scale(" +
-        //           d3.event.scale +
-        //           ")"
-        //       );
-        //   }
-        // },
+          function redraw() {
+            datamap.svg
+              .selectAll("g")
+              .attr(
+                "transform",
+                "translate(" +
+                  d3.event.translate +
+                  ")scale(" +
+                  d3.event.scale +
+                  ")"
+              );
+          }
+        },
       });
 
       // var containerW = d3.select(".datamap").style("width");
